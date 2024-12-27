@@ -1,30 +1,43 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="layout-demo">
+    <a-layout style="height: 400px;">
+      <a-layout-header>Header</a-layout-header>
+      <a-layout-content>Content</a-layout-content>
+      <a-layout-footer>Footer</a-layout-footer>
+    </a-layout>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.layout-demo :deep(.arco-layout-header),
+.layout-demo :deep(.arco-layout-footer),
+.layout-demo :deep(.arco-layout-sider-children),
+.layout-demo :deep(.arco-layout-content) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 16px;
+  font-stretch: condensed;
+  text-align: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+
+.layout-demo :deep(.arco-layout-header),
+.layout-demo :deep(.arco-layout-footer) {
+  height: 64px;
+  background-color: var(--color-primary-light-4);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.layout-demo :deep(.arco-layout-sider) {
+  width: 206px;
+  background-color: var(--color-primary-light-3);
+}
+
+.layout-demo :deep(.arco-layout-content) {
+  background-color: rgb(var(--arcoblue-6));
 }
 </style>
