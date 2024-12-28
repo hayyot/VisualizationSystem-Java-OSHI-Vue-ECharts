@@ -1,17 +1,33 @@
+<!--
+ * @Author: Jason Shen
+ * @Date: 2024-12-27 21:54:13
+ * @Description: All I Can Do!
+ * @FilePath: \FE\VisualizationSystem-Java-OSHI-Vue-ECharts\FE\src\App.vue
+-->
 <script setup lang="ts">
+import NavBar from './views/NavBar.vue';
+
 </script>
 
 <template>
   <div class="layout-demo">
-    <a-layout style="height: 400px;">
-      <a-layout-header>Header</a-layout-header>
-      <a-layout-content>Content</a-layout-content>
+    <a-layout style="height: 100vh;">
+      <a-layout-header>
+        <NavBar />
+      </a-layout-header>
+      <a-layout-content><RouterView /></a-layout-content>
       <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
   </div>
 </template>
 
 <style scoped>
+.menu-demo {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40px;
+  background-color: var(--color-neutral-2);
+}
 .layout-demo :deep(.arco-layout-header),
 .layout-demo :deep(.arco-layout-footer),
 .layout-demo :deep(.arco-layout-sider-children),
