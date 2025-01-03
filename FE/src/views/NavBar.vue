@@ -25,16 +25,21 @@
           }"
         />
       </a-menu-item>
-      <a-menu-item key="1">首页</a-menu-item>
-      <a-menu-item key="2">CPU监控</a-menu-item>
-      <a-menu-item key="3">Cloud Service</a-menu-item>
-      <a-menu-item key="4">Cooperation</a-menu-item>
+      <a-menu-item key="1" @click="navTo('/')">首页</a-menu-item>
+      <a-menu-item key="2" @click="navTo('/')">CPU监控</a-menu-item>
+      <a-menu-item key="3" @click="navTo('/')">Cloud Service</a-menu-item>
+      <a-menu-item key="4" @click="navTo('/')">Cooperation</a-menu-item>
     </a-menu>
   </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {useRouter} from 'vue-router'
+const router = useRouter()
+const navTo = (url:string) => {
+  router.push(url);
+}
 </script>
 
 <style scoped>
